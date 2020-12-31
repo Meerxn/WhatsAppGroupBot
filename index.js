@@ -40,9 +40,9 @@ client.initialize();
 
 
 var groupType = "";
-
+//EVERYONE TAG
 client.on('message', async (msg) => {
-    if(msg.body === 'tester') {
+    if(msg.body === 'everyone') {
         const chat = await msg.getChat();
         
         let text = "";
