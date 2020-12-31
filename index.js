@@ -58,6 +58,10 @@ client.on('message', async (msg) => {
 
         chat.sendMessage(text, { mentions });
     }
+
+
+
+    
     // Hardcoded this list for the lads in my group chat for now 
     if (msg.body === '@league'){
     leagueList = ["Krishang UK", "Craig", "Gabe", "Joshua" , "Yash", "Aru",  "Mahmoud" , "Rylan", "Nazim" , "Sagnik"];
