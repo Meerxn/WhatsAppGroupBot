@@ -1,0 +1,24 @@
+{
+  "name": "whatsappgrouptag",
+  "version": "1.0.0",
+  "description": "Group tag",
+  "main": "index.js",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meerxn/WhatsAppGroupTag.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meerxn/WhatsAppGroupTag/issues"
+  },
+  "homepage": "https://github.com/Meerxn/WhatsAppGroupTag#readme"
+}
