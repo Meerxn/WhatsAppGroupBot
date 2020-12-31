@@ -42,8 +42,9 @@ client.initialize();
 var groupType = "";
 //EVERYONE TAG
 client.on('message', async (msg) => {
-    if(msg.body === 'everyone') {
-        const chat = await msg.getChat();
+    const chat = await msg.getChat();
+    if(msg.body === '@everyone') {
+        
         
         let text = "";
         let mentions = [];
@@ -57,40 +58,83 @@ client.on('message', async (msg) => {
 
         chat.sendMessage(text, { mentions });
     }
+    // Hardcoded this list for the lads in my group chat for now 
+    if (msg.body === '@league'){
+    leagueList = ["Krishang UK", "Craig", "Gabe", "Joshua" , "Yash", "Aru",  "Mahmoud" , "Rylan", "Nazim" , "Sagnik"];
+    let text = "";
+    let mentions = [];
+
+        for(let participant of chat.participants) {
+            const contact = await client.getContactById(participant.id._serialized);
+            for(i = 0 ; i < leagueList.length; i++){
+                if (contact.name === leagueList[i]){
+                    mentions.push(contact);
+                    text += `@${participant.id.user} `;
+                    break;
+                }
+
+            }
+            
+        }
+
+        chat.sendMessage(text, { mentions });
+    }
+
+
+
+
+
+
+
 });
-client.on('message', async (msg) => {
-    count = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// THIS IS JUST A HARDCODE FOR THE BOYS
+// client.on('message', async (msg) => {
+//     count = 0
    
-    if(msg.body === 'tr') {
+//     if(msg.body === '@league') {
 
-        recentsB = [];
+//         recentsB = [];
 
-        leagueList = ["Krishang UK", "Craig", "Gabe", "Joshua" , "Yash"];
+//         leagueList = ["Krishang UK", "Craig", "Gabe", "Joshua" , "Yash", "Aru", "Parth" , "Mahmoud" , "Rylan", "Nazim" , "Sagnik"];
         
       
         
 
-        mainC =  await msg.getContact();
+//         mainC =  await msg.getContact();
     
             
-        const chat = await msg.getChat();
+//         const chat = await msg.getChat();
         
 
 
-        chat.sendMessage("Hello " + mainC.pushname+ " " + "This is the group category tagging bot. It has the ability to tag people based on different labels. If you do not see tags this could mean that this is not a group chat please make sure to use the bot with a group chat");
+//         chat.sendMessage("Hello " + mainC.pushname+ " " + "This is the group category tagging bot. It has the ability to tag people based on different labels. If you do not see tags this could mean that this is not a group chat please make sure to use the bot with a group chat");
         
 
 
         
 
         
-        if (chat.isGroup){
-         var mydata = JSON.parse(data);    
+//         if (chat.isGroup){
+//          var mydata = JSON.parse(data);    
         
-        chat.sendMessage("Create a group (yes/no) ? ")
-        cb = -1;
+//         chat.sendMessage("Create a group (yes/no) ? ")
+//         cb = -1;
 
-        count = 0 ;
+//         count = 0 ;
         //client.on('message', async(message) =>{
             //if (message.body === 'yes'){
                 //cb = 1;
@@ -106,7 +150,7 @@ client.on('message', async (msg) => {
             //     newL = {};
             //     newName = "";
             //     flagger = 0;
-                chat.sendMessage("Please state your tag label name");
+                //chat.sendMessage("Please state your tag label name");
             //     client.on('message', async(newmsg) =>{
             //         for (i = 0; i < mydata ; i++){
             //             if (newmsg.body === mydata.name){
@@ -149,25 +193,25 @@ client.on('message', async (msg) => {
     
                 
                 
-                const contact = await client.getContactById(participant.id._serialized);
-               // if(contact.name === "Krishang UK" || contact.name ===  "Craig" || contact.name === "Gabe"|| contact.name === "Joshua"   || contact.name === "Yash"){
+            //     const contact = await client.getContactById(participant.id._serialized);
+            //    // if(contact.name === "Krishang UK" || contact.name ===  "Craig" || contact.name === "Gabe"|| contact.name === "Joshua"   || contact.name === "Yash"){
                 
     
     
-                console.log(text)
-                mentions.push(contact);
-                text += `@${participant.id.user} `;
-               // }
+            //     console.log(text)
+            //     mentions.push(contact);
+            //     text += `@${participant.id.user} `;
+            //    // }
     
                 
                
             
-            if (count === 1){
-            console.log(text);
-            chat.sendMessage(text,{mentions});
-            count = 0;
+            // if (count === 1){
+            // console.log(text);
+            // chat.sendMessage(text,{mentions});
+            // count = 0;
 
-            }
+            // }
             
                 
 
@@ -208,9 +252,9 @@ client.on('message', async (msg) => {
     
     
     
-}
-    }
+// }
+//     }
 
 
 
-});
+// });
