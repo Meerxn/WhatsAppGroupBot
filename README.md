@@ -2,7 +2,7 @@
 
 <h2> Summary </h2>
 
-<p>This repo is a script file that will tag all members of a group at one go. (currently needs fixing) using whatsapp web in JS </p>
+<p>This repo is a script file that will categorize the tagging of members of a group by using labels to create sub groups. (currently needs fixing) using whatsapp web in JS </p>
 
 <h2> API CREDITS </h2>
 
