@@ -1,4 +1,4 @@
-# WhatsAppGroupTag
+# WhatsApp Group Bot
 
 <h2> Summary </h2>
 
